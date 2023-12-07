@@ -6,17 +6,22 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write \"**/*.{js,jsx,md}\""
   },
   "dependencies": {
     "@ensdomains/thorin": "^0.6.44",
     "next": "14.0.3",
+    "prettier": "^3.1.0",
     "react": "^18",
     "react-dom": "^18",
     "react-transition-state": "1.1.5",
-    "styled-components": "^6.1.1"
+    "styled-components": "^6.1.1",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "@types/node": "20.10.3",
+    "@types/react": "18.2.42",
     "eslint": "^8",
     "eslint-config-next": "14.0.3"
   }
