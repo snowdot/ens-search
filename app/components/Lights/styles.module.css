@@ -1,0 +1,88 @@
+.lights {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  transform: translate(0, -34px);
+}
+
+.lights svg {
+  width: 122px;
+  height: 65px;
+}
+
+.lights svg path.light1 {
+  fill: #7FD6C2;
+  animation: light1 5s linear infinite;
+}
+
+.lights svg path.light2 {
+  fill: #E0719E;
+  animation: light2 5s 2.5s linear infinite;
+}
+
+.lights svg path.light3 {
+  fill: #F6E049;
+  animation: light3 5s linear infinite;
+}
+
+.lights svg path.light4 {
+  fill: #AAC6FC;
+  animation: light4 5s 2.5s linear infinite;
+}
+
+@keyframes light1 {
+  0% {
+    fill: #7FD6C2;
+  }
+
+  50% {
+    fill: #4a8275;
+  }
+
+  100% {
+    fill: #7FD6C2;
+  }
+}
+
+@keyframes light2 {
+  0% {
+    fill: #E0719E;
+  }
+
+  50% {
+    fill: #99506d;
+  }
+
+  100% {
+    fill: #E0719E;
+  }
+}
+
+@keyframes light3 {
+  0% {
+    fill: #F6E049;
+  }
+
+  50% {
+    fill: #716622;
+  }
+
+  100% {
+    fill: #F6E049;
+  }
+}
+
+@keyframes light4 {
+  0% {
+    fill: #AAC6FC;
+  }
+
+  50% {
+    fill: #4f5c76;
+  }
+
+  100% {
+    fill: #AAC6FC;
+  }
+}
