@@ -1,0 +1,19 @@
+.snowflakeWrapper {
+  animation: fall linear forwards;
+  display: block;
+  position: absolute;
+}
+
+.snowflakeSvg {
+  display: block;
+}
+
+@keyframes fall {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(0, calc(100vh + 200px), 0);
+  }
+}
