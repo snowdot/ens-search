@@ -18,3 +18,7 @@ export const range = (start, end, step = 1) => {
   }
   return output;
 };
+
+export const trimAddress = (address) => {
+  return `${address.slice(0, 6)}...${address.slice(-4)}`;
+};
