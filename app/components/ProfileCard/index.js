@@ -24,19 +24,19 @@ export default function ProfileCard({ loading, profile, color }) {
   const identities = [
     {
       platform: "ens",
-      identity: "snowdot.eth",
+      identity: "demo.eth",
     },
     {
       platform: "lens",
-      identity: "snowdot.lens",
+      identity: "demo.lens",
     },
     {
       platform: "farcaster",
-      identity: "snowdot.eth",
+      identity: "demo.eth",
     },
     {
       platform: "unstoppabledomains",
-      identity: "snowdot.x",
+      identity: "demo.x",
     },
   ];
 
