@@ -19,24 +19,24 @@
 
 .lights svg path.greenLight {
   fill: #008667;
-  animation: greenLight 3s linear infinite;
+  animation: greenLight 2s linear infinite;
 }
 
 .lights svg path.yellowLight {
   fill: #a38e00;
-  animation: yellowLight 3s linear infinite;
-  animation-delay: 1.5s;
+  animation: yellowLight 2s linear infinite;
+  animation-delay: 1s;
 }
 
 .lights svg path.redLight {
   fill: #ff0066;
-  animation: redLight 3s linear infinite;
+  animation: redLight 2s linear infinite;
 }
 
 .lights svg path.purpleLight {
   fill: #0055ff;
-  animation: purpleLight 3s linear infinite;
-  animation-delay: 1.5s;
+  animation: purpleLight 2s linear infinite;
+  animation-delay: 1s;
 }
 
 @keyframes greenLight {
