@@ -51,7 +51,7 @@ const Snowfall = ({ children }) => {
       setSnowflakes(nextSnowflakes);
     },
     50,
-    500,
+    2000,
   );
 
   return (

@@ -18,77 +18,77 @@
 }
 
 .lights svg path.greenLight {
-  fill: #7FD6C2;
-  animation: greenLight 3s linear infinite;
-}
-
-.lights svg path.redLight {
-  fill: #E0719E;
-  animation: redLight 3s 1.5s linear infinite;
+  fill: #008667;
+  animation: greenLight 2s linear infinite;
 }
 
 .lights svg path.yellowLight {
-  fill: #F6E049;
-  animation: yellowLight 3s linear infinite;
+  fill: #a38e00;
+  animation: yellowLight 2s 2s linear infinite;
+}
+
+.lights svg path.redLight {
+  fill: #ff0066;
+  animation: redLight 2s linear infinite;
 }
 
 .lights svg path.purpleLight {
-  fill: #AAC6FC;
-  animation: purpleLight 3s 1.5s linear infinite;
+  fill: #0055ff;
+  animation: purpleLight 2s 2s linear infinite;
 }
 
 @keyframes greenLight {
   0% {
-    fill: #7FD6C2;
-  }
-
-  50% {
     fill: #008667;
   }
 
-  100% {
+  50% {
     fill: #7FD6C2;
   }
-}
-
-@keyframes redLight {
-  0% {
-    fill: #E0719E;
-  }
-
-  50% {
-    fill: #ff0066;
-  }
 
   100% {
-    fill: #E0719E;
+    fill: #008667;
   }
 }
 
 @keyframes yellowLight {
   0% {
-    fill: #F6E049;
+    fill: #a38e00;
   }
 
   50% {
-    fill: #e6c700;
+    fill: #F6E049;
   }
 
   100% {
-    fill: #F6E049;
+    fill: #a38e00;
+  }
+}
+
+@keyframes redLight {
+  0% {
+    fill: #ff0066;
+  }
+
+  50% {
+    fill: #E0719E;
+  }
+
+  100% {
+    fill: #ff0066;
   }
 }
 
 @keyframes purpleLight {
   0% {
-    fill: #AAC6FC;
-  }
-
-  50% {
     fill: #0055ff;
   }
 
-  100% {
+  50% {
     fill: #AAC6FC;
+  }
+
+  100% {
+    fill: #0055ff;
   }
 }
