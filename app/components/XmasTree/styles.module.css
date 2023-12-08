@@ -1,0 +1,110 @@
+.xmasTree {
+  display: block;
+}
+
+.tree {
+  background-image: url("/slope.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  min-width: 100vw;
+  padding: 2rem 4rem;
+}
+
+.tree svg path.treeStar {
+  fill: #F6E049;
+  animation: treeStar 0.5s linear infinite;
+}
+
+.tree svg path.blueLight {
+  fill: #4053FA;
+  animation: blueLight 3s linear infinite;
+}
+
+.tree svg path.redLight {
+  fill: #E0719E;
+  animation: redLight 3s 1.5s linear infinite;
+}
+
+.tree svg path.yellowLight {
+  fill: #F6E049;
+  animation: yellowLight 3s linear infinite;
+}
+
+.tree svg path.purpleLight {
+  fill: #AAC6FC;
+  animation: purpleLight 3s 1.5s linear infinite;
+}
+
+@keyframes blueLight {
+  0% {
+    fill: #4053FA;
+  }
+
+  50% {
+    fill: #293fff;
+  }
+
+  100% {
+    fill: #4053FA;
+  }
+}
+
+@keyframes redLight {
+  0% {
+    fill: #E0719E;
+  }
+
+  50% {
+    fill: #ff0066;
+  }
+
+  100% {
+    fill: #E0719E;
+  }
+}
+
+@keyframes yellowLight {
+  0% {
+    fill: #F6E049;
+  }
+
+  50% {
+    fill: #e6c700;
+  }
+
+  100% {
+    fill: #F6E049;
+  }
+}
+
+@keyframes purpleLight {
+  0% {
+    fill: #AAC6FC;
+  }
+
+  50% {
+    fill: #0055ff;
+  }
+
+  100% {
+    fill: #AAC6FC;
+  }
+}
+
+@keyframes treeStar {
+  0% {
+    fill: #F6E049;
+  }
+
+  50% {
+    fill: #e6c700;
+  }
+
+  100% {
+    fill: #F6E049;
+  }
+}
