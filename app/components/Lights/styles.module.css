@@ -2,8 +2,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 8px;
   width: 100%;
   transform: translate(0, -34px);
+  padding: 0 16px;
+}
+
+.lightsToggle {
+  transform: translate(0, 25px);
 }
 
 .lights svg {
@@ -11,33 +17,33 @@
   height: 65px;
 }
 
-.lights svg path.light1 {
+.lights svg path.greenLight {
   fill: #7FD6C2;
-  animation: light1 5s linear infinite;
+  animation: greenLight 3s linear infinite;
 }
 
-.lights svg path.light2 {
+.lights svg path.redLight {
   fill: #E0719E;
-  animation: light2 5s 2.5s linear infinite;
+  animation: redLight 3s 1.5s linear infinite;
 }
 
-.lights svg path.light3 {
+.lights svg path.yellowLight {
   fill: #F6E049;
-  animation: light3 5s linear infinite;
+  animation: yellowLight 3s linear infinite;
 }
 
-.lights svg path.light4 {
+.lights svg path.purpleLight {
   fill: #AAC6FC;
-  animation: light4 5s 2.5s linear infinite;
+  animation: purpleLight 3s 1.5s linear infinite;
 }
 
-@keyframes light1 {
+@keyframes greenLight {
   0% {
     fill: #7FD6C2;
   }
 
   50% {
-    fill: #4a8275;
+    fill: #008667;
   }
 
   100% {
@@ -45,13 +51,13 @@
   }
 }
 
-@keyframes light2 {
+@keyframes redLight {
   0% {
     fill: #E0719E;
   }
 
   50% {
-    fill: #99506d;
+    fill: #ff0066;
   }
 
   100% {
@@ -59,13 +65,13 @@
   }
 }
 
-@keyframes light3 {
+@keyframes yellowLight {
   0% {
     fill: #F6E049;
   }
 
   50% {
-    fill: #716622;
+    fill: #e6c700;
   }
 
   100% {
@@ -73,13 +79,13 @@
   }
 }
 
-@keyframes light4 {
+@keyframes purpleLight {
   0% {
     fill: #AAC6FC;
   }
 
   50% {
-    fill: #4f5c76;
+    fill: #0055ff;
   }
 
   100% {
