@@ -1,0 +1,15 @@
+.identityTag,
+.tagImg {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+}
+
+.identityTag {
+  cursor: pointer;
+}
+
+.identityTag div:last-child {
+  margin-bottom: 2px;
+}
