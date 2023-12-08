@@ -1,12 +1,19 @@
 "use client";
+import { useState } from "react";
+import DataProvider from "./context/data";
 import { ThemeProvider } from "styled-components";
-import { ThorinGlobalStyles, lightTheme } from "@ensdomains/thorin";
+import { ThorinGlobalStyles, lightTheme, darkTheme } from "@ensdomains/thorin";
 
 export function Providers({ children }) {
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const useTheme = isDarkTheme ? darkTheme : lightTheme;
+
   return (
-    <ThemeProvider theme={lightTheme}>
-      <ThorinGlobalStyles />
-      {children}{" "}
-    </ThemeProvider>
+    <DataProvider isDarkTheme={isDarkTheme} setIsDarkTheme={setIsDarkTheme}>
+      <ThemeProvider theme={useTheme}>
+        <ThorinGlobalStyles />
+        {children}
+      </ThemeProvider>
+    </DataProvider>
   );
 }
