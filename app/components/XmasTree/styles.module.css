@@ -21,22 +21,24 @@
 
 .tree svg path.greenLight {
   fill: #008667;
-  animation: greenLight 2s linear infinite;
+  animation: greenLight 3s linear infinite;
 }
 
 .tree svg path.redLight {
   fill: #ff0066;
-  animation: redLight 2s linear infinite;
+  animation: redLight 3s linear infinite;
 }
 
 .tree svg path.yellowLight {
   fill: #a38e00;
-  animation: yellowLight 2s 2s linear infinite;
+  animation: yellowLight 3s linear infinite;
+  animation-delay: 1.5s;
 }
 
 .tree svg path.purpleLight {
   fill: #0055ff;
-  animation: purpleLight 2s 2s linear infinite;
+  animation: purpleLight 3s linear infinite;
+  animation-delay: 1.5s;
 }
 
 
