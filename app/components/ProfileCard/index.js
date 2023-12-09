@@ -20,13 +20,14 @@ const PLACEHOLDER_PROFILE = {
 export default function ProfileCard({ loading, profile, color }) {
   const displayProfile = loading ? PLACEHOLDER_PROFILE : profile;
   const { name, address, description, avatar, url } = displayProfile;
+  const imgSrc = name ? `https://metadata.ens.domains/mainnet/avatar/${name}` : avatar;
 
   return (
     <Card>
       <SkeletonGroup loading={loading}>
         <div className={styles.profileCardHead}>
           <div className={styles.profileCardAvatar}>
-            <Avatar label="avatar" src={avatar} />
+            <Avatar label="avatar" src={imgSrc} />
           </div>
           <div className={styles.profileCardInfo}>
             <Skeleton>
