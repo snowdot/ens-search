@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState, useEffect, useContext } from "react";
 import { DataContext } from "../../context/data";
 
@@ -121,9 +122,12 @@ export default function SearchBar() {
   return (
     <div className={styles.searchBarContainer}>
       <div className={styles.searchBarWrapper}>
-        <Heading as="h1" align="center" level="1" color={color}>
-          ENS Identity Search
-        </Heading>
+        <div className={styles.searchBarTitle}>
+          <Image src="/mistletoe.svg" alt="logo" width={50} height={50} />
+          <Heading as="h1" align="center" level="1" color={color}>
+            ENS Identity Search
+          </Heading>
+        </div>
         <div className={styles.searchBarInput}>
           <Input
             placeholder="Search by ens or address..."
