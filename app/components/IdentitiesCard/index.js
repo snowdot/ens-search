@@ -51,10 +51,10 @@ const getHrefLink = (name) => {
       return "https://app.ens.domains";
     case "lens":
       return "https://hey.xyz/u";
-    case "bayc":
-      return "https://opensea.io";
     case "farcaster":
       return "https://warpcast.com";
+    case "unstoppabledomains":
+      return "https://ud.me";
     default:
       return "";
   }
@@ -65,7 +65,8 @@ const IdentityTag = ({ category, identity }) => {
   const color = COLORS[name];
   const style = COLO_STYLES[name];
   const imgSrc = `/${name}.svg`;
-  const hrefLink = `${getHrefLink(name)}/${identity}`;
+  const hrefLink = `${getHrefLink(name)}/${name === "lens" ? identity.split(".lens")[0] : identity
+    }`;
   const trimIdentity =
     identity?.split("").length > 40 ? `${identity?.slice(0, 40)}...` : identity;
 

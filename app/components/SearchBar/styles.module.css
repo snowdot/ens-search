@@ -10,7 +10,14 @@
 
 .searchBarWrapper {
   width: 100%;
-  max-width: 600px;
+  max-width: 516px;
   margin: 0 auto;
   position: relative;
+}
+
+.searchBarTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
 }
