@@ -20,7 +20,7 @@ export const generateSnowflake = () => {
       top: "-200px",
       left: random(0, 100) + "%",
       animationDelay: random(0, 1000) + "ms",
-      animationDuration: random(7000, 10000) + "ms",
+      animationDuration: random(5000, 10000) + "ms",
       filter: `blur(${random(0, 10) ? "0px" : "1px"})`,
       opacity: random(6, 11) * 0.1,
     },
@@ -51,7 +51,7 @@ const Snowfall = ({ children }) => {
       setSnowflakes(nextSnowflakes);
     },
     50,
-    1000,
+    3000,
   );
 
   return (
