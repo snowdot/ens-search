@@ -52,6 +52,7 @@ export default function SearchBar() {
   const handleSearchReset = () => {
     // Reset state
     setSearchInput("");
+    setSearchValue("");
     setError("");
     setEnsProfile(DEFAULT_PROFILE);
   }

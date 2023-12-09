@@ -14,15 +14,11 @@
 }
 
 .identityTag {
+  cursor: pointer !important;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 4px;
-}
-
-.identitiesCard a {
-  display: block !important;
-  cursor: pointer !important;
 }
 
 .identityTag div {
