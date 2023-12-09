@@ -49,6 +49,13 @@ export default function SearchBar() {
     }
   };
 
+  const handleSearchReset = () => {
+    // Reset state
+    setSearchInput("");
+    setError("");
+    setEnsProfile(DEFAULT_PROFILE);
+  }
+
   useEffect(() => {
     if (!ens) return;
     if (!searchValue) return;
@@ -60,19 +67,21 @@ export default function SearchBar() {
 
     // Check if search value is an ENS name
     const isEnsName = Boolean(searchValue?.endsWith(".eth"));
+    const isValidAddress = Boolean(searchValue?.startsWith("0x") && searchValue?.length === 42);
 
     (async () => {
       try {
+        if (!isEnsName && !isValidAddress) {
+          throw new Error("Invalid address or ENS name");
+        }
+
         const name = isEnsName
           ? searchValue
           : (await ens.getName(searchValue)?.name) || "";
 
         // Check if name exists
         if (!name) {
-          // Update state
-          setEnsProfile((prev) => ({ ...prev, name: searchValue }));
-          setLoading(false);
-          return;
+          throw new Error("No ENS name found");
         }
 
         const address = isEnsName
@@ -82,7 +91,7 @@ export default function SearchBar() {
         const isAddress = Boolean(address !== ZERO_ADDRESS);
 
         if (!isAddress) {
-          throw new Error("Not found");
+          throw new Error("No Ethereum address found");
         }
 
         const avatar = (await ens.getText(searchValue, "avatar")) || "";
@@ -114,13 +123,12 @@ export default function SearchBar() {
         </Heading>
         <div className={styles.searchBarInput}>
           <Input
-            placeholder="0xA0Cf...251e2e"
+            placeholder="Search by ens or address..."
             value={searchInput}
             onChange={handleSearchChange}
             error={error}
-            actionIcon={<MagnifyingGlassSimpleSVG />}
-            alwaysShowAction
-            onClickAction={handleSearchClick}
+            icon={<MagnifyingGlassSimpleSVG />}
+            onClickAction={handleSearchReset}
             onKeyDown={handleSearchKeyDown}
             autoCorrect="off"
             autoCapitalize="off"
