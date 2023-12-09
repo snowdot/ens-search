@@ -28,9 +28,12 @@ export default function SearchBar() {
   const color = isDarkTheme ? "#ffffff" : "#141414";
 
   const handleSearchClick = () => {
-    // Reset state
-    setError("");
-    setEnsProfile(DEFAULT_PROFILE);
+    if (searchInput !== searchValue) {
+      // Reset state
+      setLoading(true);
+      setError("");
+      setEnsProfile(DEFAULT_PROFILE);
+    }
 
     // Update state
     setSearchValue(searchInput.trim());

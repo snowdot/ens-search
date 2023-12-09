@@ -1,30 +1,30 @@
 .identitiesCard {
-  cursor: pointer !important;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   gap: 8px;
-  max-width: 100%;
-  overflow: hidden;
+  width: 100%;
 }
 
-.identityTag,
 .tagImg {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.identityTag {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 4px;
 }
 
-.identityTag {
-  overflow: hidden;
-  white-space: nowrap;
-  width: fit-content;
+.identitiesCard a {
+  display: block !important;
+  cursor: pointer !important;
 }
 
-.identityTagIdentity {
-  display: inline-block;
+.identityTag div {
   margin-bottom: 2px;
-  text-overflow: ellipsis;
 }

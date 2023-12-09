@@ -66,6 +66,8 @@ const IdentityTag = ({ category, identity }) => {
   const style = COLO_STYLES[name];
   const imgSrc = `/${name}.svg`;
   const hrefLink = `${getHrefLink(name)}/${identity}`;
+  const trimIdentity =
+    identity?.split("").length > 40 ? `${identity?.slice(0, 40)}...` : identity;
 
   return (
     <Link href={hrefLink} target="_blank">
@@ -73,7 +75,7 @@ const IdentityTag = ({ category, identity }) => {
         <div className={styles.tagImg}>
           <Image src={imgSrc} alt="tag" width={16} height={16} />
         </div>
-        <div className={styles.identityTagIdentity}>{identity}</div>
+        <div className={styles.identityTagIdentity}>{trimIdentity}</div>
       </Tag>
     </Link>
   );
@@ -90,11 +92,11 @@ export default function IdentitiesCard({ address }) {
   });
 
   useEffect(() => {
-    if (loading) return;
-    if (!data) return;
-
     // Reset state
     setIdentities([]);
+
+    if (loading) return;
+    if (!data) return;
 
     // Get data from NEXT.ID
     const nfts = data?.identity?.nft || [];
@@ -138,12 +140,14 @@ export default function IdentitiesCard({ address }) {
   return (
     <>
       {identities.length > 0 && (
-        <div className={styles.identitiesCard}>
+        <>
           <br />
-          {identities.map((elem, index) => (
-            <IdentityTag key={index} {...elem} />
-          ))}
-        </div>
+          <div className={styles.identitiesCard}>
+            {identities.map((elem, index) => (
+              <IdentityTag key={index} {...elem} />
+            ))}
+          </div>
+        </>
       )}
     </>
   );

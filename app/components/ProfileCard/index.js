@@ -46,15 +46,15 @@ export default function ProfileCard({ loading, profile, color }) {
             </Skeleton>
           </div>
         </div>
-        <Skeleton>
-          {description && (
+        {description && (
+          <Skeleton>
             <Typography fontVariant="base" weight="normal" color={color}>
               {description}
             </Typography>
-          )}
-        </Skeleton>
+          </Skeleton>
+        )}
         <Skeleton>
-          <IdentitiesCard address={address?.toLowerCase()} />
+          {address && <IdentitiesCard address={address?.toLowerCase()} />}
         </Skeleton>
       </SkeletonGroup>
     </Card>
