@@ -20,7 +20,7 @@ export const generateSnowflake = () => {
       top: "-200px",
       left: random(0, 100) + "%",
       animationDelay: random(0, 1000) + "ms",
-      animationDuration: random(7000, 15000) + "ms",
+      animationDuration: random(7000, 10000) + "ms",
       filter: `blur(${random(0, 10) ? "0px" : "1px"})`,
       opacity: random(6, 11) * 0.1,
     },
@@ -41,7 +41,7 @@ const Snowfall = ({ children }) => {
       // Clean up any expired snowflakes
       const nextSnowflakes = snowflakes.filter((snowflake) => {
         const delta = now - snowflake.createdAt;
-        return delta < 15000;
+        return delta < 10000;
       });
 
       // Include the new snowflake
@@ -51,7 +51,7 @@ const Snowfall = ({ children }) => {
       setSnowflakes(nextSnowflakes);
     },
     50,
-    2000,
+    1000,
   );
 
   return (
