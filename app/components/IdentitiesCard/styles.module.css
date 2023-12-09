@@ -1,0 +1,27 @@
+.identitiesCard {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.identityTag,
+.tagImg {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+}
+
+.identityTag {
+  cursor: pointer;
+}
+
+.identityTag div:last-child {
+  margin-bottom: 2px;
+  max-width: fit-content;
+  word-wrap: none;
+  text-overflow: ellipsis;
+}
