@@ -14,14 +14,18 @@ export default function DataProvider({
   useEffect(() => {
     const { ethereum } = window;
     (async () => {
-      if (!ethereum) {
-        alert("Please install MetaMask");
-      }
+      try {
+        if (!ethereum) {
+          throw new Error("No ethereum provider");
+        }
 
-      const { ens } = await setupENS({
-        customProvider: ethereum,
-      });
-      setENS(ens);
+        const { ens } = await setupENS({
+          customProvider: ethereum,
+        });
+        setENS(ens);
+      } catch (error) {
+        alert(error.message);
+      }
     })();
 
     return () => {
