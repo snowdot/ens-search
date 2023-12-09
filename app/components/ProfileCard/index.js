@@ -20,7 +20,9 @@ const PLACEHOLDER_PROFILE = {
 export default function ProfileCard({ loading, profile, color }) {
   const displayProfile = loading ? PLACEHOLDER_PROFILE : profile;
   const { name, address, description, avatar, url } = displayProfile;
-  const imgSrc = name ? `https://metadata.ens.domains/mainnet/avatar/${name}` : avatar;
+  const imgSrc = name
+    ? `https://metadata.ens.domains/mainnet/avatar/${name}`
+    : avatar;
 
   return (
     <Card>

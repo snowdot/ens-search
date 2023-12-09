@@ -16,7 +16,7 @@ export default function DataProvider({
     (async () => {
       try {
         if (!ethereum) {
-          throw new Error("No ethereum provider");
+          throw new Error("Please install Metamask wallet");
         }
 
         const { ens } = await setupENS({
@@ -24,7 +24,12 @@ export default function DataProvider({
         });
         setENS(ens);
       } catch (error) {
-        alert(error.message);
+        const message = error?.message
+          ?.toLowerCase()
+          .includes("unsupported network")
+          ? "Please switch to the Ethereum Mainnet network"
+          : error?.message;
+        alert(message);
       }
     })();
 

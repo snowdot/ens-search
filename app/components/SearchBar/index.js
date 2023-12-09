@@ -55,7 +55,7 @@ export default function SearchBar() {
     setSearchValue("");
     setError("");
     setEnsProfile(DEFAULT_PROFILE);
-  }
+  };
 
   useEffect(() => {
     if (!ens) return;
@@ -68,7 +68,9 @@ export default function SearchBar() {
 
     // Check if search value is an ENS name
     const isEnsName = Boolean(searchValue?.endsWith(".eth"));
-    const isValidAddress = Boolean(searchValue?.startsWith("0x") && searchValue?.length === 42);
+    const isValidAddress = Boolean(
+      searchValue?.startsWith("0x") && searchValue?.length === 42,
+    );
 
     (async () => {
       try {
