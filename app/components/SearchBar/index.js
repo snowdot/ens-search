@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect, useContext } from "react";
-import { DataContext } from "@/app/context/data";
+import { DataContext } from "../../context/data";
 
 import styles from "./styles.module.css";
 import ProfileCard from "../ProfileCard";
@@ -28,6 +28,11 @@ export default function SearchBar() {
   const color = isDarkTheme ? "#ffffff" : "#141414";
 
   const handleSearchClick = () => {
+    // Reset state
+    setError("");
+    setEnsProfile(DEFAULT_PROFILE);
+
+    // Update state
     setSearchValue(searchInput.trim());
   };
 
@@ -68,8 +73,8 @@ export default function SearchBar() {
         }
 
         const address = isEnsName
-          ? (await ens.getAddress(searchValue)) || ""
-          : searchValue;
+          ? (await ens.getAddress(searchValue))?.toLowerCase() || ""
+          : searchValue?.toLowerCase();
 
         const isAddress = Boolean(address !== ZERO_ADDRESS);
 
@@ -102,7 +107,7 @@ export default function SearchBar() {
     <div className={styles.searchBarContainer}>
       <div className={styles.searchBarWrapper}>
         <Heading as="h1" align="center" level="1" color={color}>
-          Web3 Identity Search
+          ENS Identity Search
         </Heading>
         <div className={styles.searchBarInput}>
           <Input

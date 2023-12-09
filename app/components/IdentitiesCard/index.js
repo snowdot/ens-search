@@ -73,7 +73,7 @@ const IdentityTag = ({ category, identity }) => {
         <div className={styles.tagImg}>
           <Image src={imgSrc} alt="tag" width={16} height={16} />
         </div>
-        <div>{identity}</div>
+        <div className={styles.identityTagIdentity}>{identity}</div>
       </Tag>
     </Link>
   );
@@ -136,9 +136,15 @@ export default function IdentitiesCard({ address }) {
   }, [data, loading]);
 
   return (
-    <div className={styles.identitiesCard}>
-      {identities.length > 0 &&
-        identities.map((elem, index) => <IdentityTag key={index} {...elem} />)}
-    </div>
+    <>
+      {identities.length > 0 && (
+        <div className={styles.identitiesCard}>
+          <br />
+          {identities.map((elem, index) => (
+            <IdentityTag key={index} {...elem} />
+          ))}
+        </div>
+      )}
+    </>
   );
 }

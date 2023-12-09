@@ -1,9 +1,9 @@
 "use client";
 import { useState } from "react";
 import styles from "./styles.module.css";
-import useRandomInterval from "@/app/hooks/useRandomInterval";
-import Snowflake from "@/app/components/Snowflake";
-import { random, randNumSign } from "@/app/helpers/functions";
+import useRandomInterval from "../../hooks/useRandomInterval";
+import Snowflake from "../Snowflake";
+import { random, randNumSign } from "../../helpers/functions";
 import { v4 as uuidv4 } from "uuid";
 
 export const generateSnowflake = () => {

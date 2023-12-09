@@ -6,7 +6,7 @@ import {
   Skeleton,
   SkeletonGroup,
 } from "@ensdomains/thorin";
-import IdentityTag from "../IdentityTag";
+import IdentitiesCard from "../IdentitiesCard";
 
 const PLACEHOLDER_PROFILE = {
   name: "ENS Account",
@@ -20,25 +20,6 @@ const PLACEHOLDER_PROFILE = {
 export default function ProfileCard({ loading, profile, color }) {
   const displayProfile = loading ? PLACEHOLDER_PROFILE : profile;
   const { name, address, description, avatar, url } = displayProfile;
-
-  const identities = [
-    {
-      platform: "ens",
-      identity: "demo.eth",
-    },
-    {
-      platform: "lens",
-      identity: "demo.lens",
-    },
-    {
-      platform: "farcaster",
-      identity: "demo.eth",
-    },
-    {
-      platform: "unstoppabledomains",
-      identity: "demo.x",
-    },
-  ];
 
   return (
     <Card>
@@ -66,18 +47,14 @@ export default function ProfileCard({ loading, profile, color }) {
           </div>
         </div>
         <Skeleton>
-          <Typography fontVariant="base" weight="normal" color={color}>
-            {description}
-          </Typography>
+          {description && (
+            <Typography fontVariant="base" weight="normal" color={color}>
+              {description}
+            </Typography>
+          )}
         </Skeleton>
         <Skeleton>
-          {identities.length > 0 && (
-            <div className={styles.profileCardBody}>
-              {identities.map((identity, index) => (
-                <IdentityTag key={index} {...identity} />
-              ))}
-            </div>
-          )}
+          <IdentitiesCard address={address?.toLowerCase()} />
         </Skeleton>
       </SkeletonGroup>
     </Card>
