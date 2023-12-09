@@ -1,10 +1,12 @@
 .identitiesCard {
+  cursor: pointer !important;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-start;
   gap: 8px;
-  margin-top: 24px;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .identityTag,
@@ -16,12 +18,13 @@
 }
 
 .identityTag {
-  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  width: fit-content;
 }
 
-.identityTag div:last-child {
+.identityTagIdentity {
+  display: inline-block;
   margin-bottom: 2px;
-  max-width: fit-content;
-  word-wrap: none;
   text-overflow: ellipsis;
 }

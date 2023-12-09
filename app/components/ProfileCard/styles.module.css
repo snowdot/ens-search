@@ -17,11 +17,3 @@
   justify-content: center;
   gap: 4px;
 }
-
-.profileCardBody {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 8px;
-}
